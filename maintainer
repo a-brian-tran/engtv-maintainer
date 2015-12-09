@@ -1,0 +1,8 @@
+#!/bin/bash
+
+while true; do
+    ./update
+    ./ensure-connection
+
+    sleep 300
+done

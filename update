@@ -1,0 +1,5 @@
+#!/bin/bash
+
+managedsoftwareupdate --munkipkgsonly
+managedsoftwareupdate --installonly
+softwareupdate --install --all

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+port_status=$(nmap -p 9202 localhost | awk '/9202/ {print $2}')
+
+if [ "${port_status}" = "closed" ]; then
+    ssh -i ~/.ssh/grav-util-box.pem -L 9202:li-search-02.service.prod-os-sjc1-1.internal:9200 cloud-user@10.161.104.31
+else
+    echo "Already connected."
+fi
